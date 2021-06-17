@@ -69,7 +69,7 @@ public class TestHealthCheck extends TestCase {
 
     /**
      * BMI判定結果「肥満」のテストケース.
-     * 72.25/(1.7*1.7) = 18.5
+     * 72.25/(1.7*1.7) = 25
      */
     @Test
     public void testExecuteUpper() {
@@ -81,6 +81,24 @@ public class TestHealthCheck extends TestCase {
         bmiBean.setWeight(weight);
         healthCheck.execute(bmiBean);
         final String expected = "肥満";
+        final String actual = bmiBean.getBodyType();
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * BMI判定結果「肥満（4度）」のテストケース.
+     * 116.00/(1.7*1.7) > 40.0
+     */
+    @Test
+    public void testExecuteObese() {
+        final double height = 170.0;
+        final double weight = 116.00;
+        HealthCheck healthCheck = new HealthCheck();
+        BmiBean bmiBean = new BmiBean();
+        bmiBean.setHeight(height);
+        bmiBean.setWeight(weight);
+        healthCheck.execute(bmiBean);
+        final String expected = "肥満（4度）";
         final String actual = bmiBean.getBodyType();
         assertEquals(expected, actual);
     }
