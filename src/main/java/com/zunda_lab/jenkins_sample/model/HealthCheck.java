@@ -14,6 +14,7 @@ public class HealthCheck {
     /** BMI肥満（4度）の下限値. */
     private static final double BMI_OBESE_LOWER_LIMIT = 40.0;
 
+
     /**
      * BMIを算出する.
      * @param bmiBean BmiBean
@@ -40,6 +41,5 @@ public class HealthCheck {
         }
         bmiBean.setBodyType(bodyType);
     }
-
 
 }
