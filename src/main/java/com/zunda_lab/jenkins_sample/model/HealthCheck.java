@@ -40,5 +40,4 @@ public class HealthCheck {
         }
         bmiBean.setBodyType(bodyType);
     }
-
 }
