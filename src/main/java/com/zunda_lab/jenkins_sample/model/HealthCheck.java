@@ -12,7 +12,7 @@ public class HealthCheck {
     /** BMI標準の上限値. */
     private static final double BMI_NORMAL_UPPER_LIMIT = 25.0;
     /** BMI肥満（4度）の下限値. */
-    private static final double BMI_OBESE_LOWER_LIMIT = 40.0;
+    private static final double BMI_OBESE_LOWER_LIMIT = 40.0
 
 
     /**
